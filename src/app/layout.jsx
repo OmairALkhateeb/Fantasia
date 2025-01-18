@@ -1,14 +1,14 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Inter } from "next/font/google";
+import { IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navigations/Navbar";
 
-const inter = Inter({
+const ibmPlexSans = IBM_Plex_Sans({
   subsets: ["latin"],
-  variable: "--font-inter",
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-ibm-plex-sans", // Set the custom CSS variable
+  weight: ["100", "200", "300", "400", "500", "600", "700"],
 });
 
 export default function RootLayout({ children }) {
@@ -31,13 +31,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <body
-        className={`${inter.variable} antialiased`}
-        style={{
-          fontFamily:
-            "var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif",
-        }}
-      >
+      <body className={`${ibmPlexSans.variable} antialiased`}>
         <Navbar navbarColor={navbarColor} />
         <main>{children}</main>
       </body>
